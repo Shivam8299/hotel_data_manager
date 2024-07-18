@@ -4,8 +4,10 @@ const db = require('./db')
 const person = require('./models/personData')
 const menuData = require('./models/menu')
 const bodyParser = require('body-parser')
+require('dotenv').config();
 
 app.use(bodyParser.json())
+const PORT = process.env.PORT ||3000
 
 app.get("/", (req, res)=>{
     res.send("Hello Sir,Welcome!")
@@ -20,6 +22,6 @@ app.use('/person',personRoutes)
 const menuRoute = require('./routes/menuroutes')
 app.use('/menu',menuRoute)
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("server is listing on port 3000")
 })
