@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config();
 
 app.use(bodyParser.json())
-const PORT = process.env.PORT ||3000
+const PORT = process.env.PORT ||3000 
 
 app.get("/", (req, res)=>{
     res.send("Hello Sir,Welcome!")
